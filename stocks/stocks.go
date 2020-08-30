@@ -10,11 +10,9 @@ import (
 // Stocks Struct
 type Stocks struct {
 	gorm.Model
-	SerialNumber string `json:"serialNumber"`
-	Brand        string `json:"brand"`
-	ModelName    string `json:"model"`
-	Status       string `json:"status"`
-	DateBought   string `json:"dateBought"`
+	Symbol string `json:"symbol"`
+	Price  string `json:"price"`
+	Trend  string `json:"trend"`
 }
 
 // GetStocks function
