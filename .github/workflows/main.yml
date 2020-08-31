@@ -1,4 +1,4 @@
-name: rdash-ci
+name: react-stock-price-ci
 on:
   push:
     branches: [ master ]
