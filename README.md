@@ -1,5 +1,7 @@
 # React stock price
 
+![](https://github.com/tuxrace/react-stock-price/workflows/react-stock-price-ci/badge.svg)
+
 ## To run
   - `npm install`
   - `npm run start:app`
