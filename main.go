@@ -26,6 +26,23 @@ func startDB() {
 	database.DB.AutoMigrate(&stocks.Stocks{})
 }
 
+func boostrapDB() {
+	var err error
+	database.DB, err = gorm.Open("sqlite3", "stocks.db")
+
+	if err != nil {
+		panic("Error bootstrap")
+	}
+
+	db := database.DB
+	var item stocks.Stocks
+	item.Symbol = "D05"
+	item.Price = "20.1"
+	item.Trend = "Up"
+	db.Create(&item)
+	fmt.Println("Bootstrap done")
+}
+
 func setupRoutes(app *fiber.App) {
 	app.Get("/", index)
 
@@ -38,6 +55,7 @@ func main() {
 	app.Use(cors.New())
 	startDB()
 	setupRoutes(app)
+	boostrapDB()
 	app.Listen(3001)
 	defer database.DB.Close()
 }
