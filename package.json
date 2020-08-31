@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:dev": "npx concurrently \"npm start\" \"go run main.go\""
+    "start:app": "npx concurrently \"npm start\" \"go run main.go\""
   },
   "eslintConfig": {
     "extends": "react-app"
